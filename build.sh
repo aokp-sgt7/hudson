@@ -38,12 +38,6 @@ then
   exit 1
 fi
 
-if [ -z "$RELEASE_TYPE" ]
-then
-  echo RELEASE_TYPE not specified
-  exit 1
-fi
-
 if [ -z "$SYNC_PROTO" ]
 then
   SYNC_PROTO=git
@@ -86,7 +80,7 @@ then
   CORE_BRANCH=$REPO_BRANCH
 fi
 rm -rf .repo/manifests*
-repo init -u $SYNC_PROTO://github.com/sgt7/android.git -b $CORE_BRANCH
+repo init -u https://github.com/stimpz0r/platform_manifest.git -b $CORE_BRANCH
 check_result "repo init failed."
 
 # make sure ccache is in PATH
@@ -119,29 +113,12 @@ fi
 lunch $LUNCH
 check_result "lunch failed."
 
-rm -f $OUT/cm-*.zip*
+rm -f $OUT/aokp*.zip*
 
 UNAME=$(uname)
 
-if [ "$RELEASE_TYPE" = "CM_NIGHTLY" ]
-then
-    export CM_NIGHTLY=true
-elif [ "$RELEASE_TYPE" = "CM_SNAPSHOT" ]
-then
-  export CM_SNAPSHOT=true
-elif [ "$RELEASE_TYPE" = "CM_RELEASE" ]
-then
-    export CM_RELEASE=true
-fi
-
-if [ ! -z "$CM_EXTRAVERSION" ]
-then
-  export CM_SNAPSHOT=true
-fi
-
 if [ ! -z "$GERRIT_CHANGES" ]
 then
-  export CM_SNAPSHOT=true
   IS_HTTP=$(echo $GERRIT_CHANGES | grep http)
   if [ -z "$IS_HTTP" ]
   then
@@ -162,6 +139,6 @@ make $CLEAN_TYPE
 mka bacon recoveryzip recoveryimage checkapi
 check_result "Build failed."
 
-cp $OUT/cm-*.zip* $WORKSPACE/archive
+cp $OUT/aokp*.zip* $WORKSPACE/archive
 # chmod the files in case UMASK blocks permissions
 chmod -R ugo+r $WORKSPACE/archive
