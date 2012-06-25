@@ -80,7 +80,7 @@ then
   CORE_BRANCH=$REPO_BRANCH
 fi
 rm -rf .repo/manifests*
-repo init -u https://github.com/stimpz0r/platform_manifest.git -b $CORE_BRANCH
+repo init -u https://github.com/aokp-sgt7/platform_manifest.git -b $CORE_BRANCH
 check_result "repo init failed."
 
 # make sure ccache is in PATH

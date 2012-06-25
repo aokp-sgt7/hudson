@@ -2,13 +2,13 @@
 <manifest>
   <project name="koush/proprietary_vendor_samsung" path="vendor/samsung" revision="ics" />
 
-  <project name="CyanogenMod/android_device_samsung_p1-common" path="device/samsung/p1-common" revision="ics" />
-  <project name="CyanogenMod/android_device_samsung_p1" path="device/samsung/p1" revision="ics" />
-  <project name="CyanogenMod/android_device_samsung_p1c" path="device/samsung/p1c" revision="ics" />
+  <project name="aokp-sgt7/android_device_samsung_p1-common" path="device/samsung/p1-common" revision="ics" />
+  <project name="aokp-sgt7/android_device_samsung_p1" path="device/samsung/p1" revision="ics" />
+  <project name="aokp-sgt7/android_device_samsung_p1c" path="device/samsung/p1c" revision="ics" />
   <project name="CyanogenMod/android_kernel_samsung_p1" path="kernel/samsung/p1" remote="github" revision="android-samsung-2.6.35" />
   <project name="CyanogenMod/android_kernel_samsung_galaxytab-cdma" path="kernel/samsung/p1c" remote="github" revision="ics" />
-  <project name="CyanogenMod/android_device_samsung_p1l" path="device/samsung/p1l" remote="github" revision="ics" />
-  <project name="CyanogenMod/android_device_samsung_p1n" path="device/samsung/p1n" remote="github" revision="ics" />
+  <project name="aokp-sgt7/android_device_samsung_p1l" path="device/samsung/p1l" remote="github" revision="ics" />
+  <project name="aokp-sgt7/android_device_samsung_p1n" path="device/samsung/p1n" remote="github" revision="ics" />
 
   <project name="CyanogenMod/android_packages_apps_SamsungServiceMode" path="packages/apps/SamsungServiceMode" remote="github" revision="ics" />
 </manifest>
